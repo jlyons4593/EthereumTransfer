@@ -1,41 +1,45 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import {HiMenuAlt4} from 'react-icons/hi'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BiTransferAlt} from 'react-icons/bi'
 import { SiEthereum } from 'react-icons/si'
-
+import {  NavLink } from 'react-router-dom'
 
 const mainStyles = {
     className:'text-white md:flex hidden list-none flex-row justify-between items-center flex-initial px-7',
-    activeClassName: 'underline text-gray-900'
+   
 } 
+const styles = {
+    className:'text-white md:flex hidden list-none flex-row justify-between items-center flex-initial px-7',
+    
+}
 const secondaryStyles ={
     className:'text-white flex  list-none flex-row justify-between items-center flex-initial px-7',
-    activeClassName: 'underline text-gray-900'
+  
 }
 const links = [
     {
-        // className: mainStyles.className,
-        // activeClassName: styles.activeClassName,
+        className: styles.className,
+        activeClassName: styles.activeClassName,
         to: '#',
         name: 'Blockchain'
     },
     {
-        // className: styles.className,
-        // activeClassName: styles.activeClassName,
+        className: styles.className,
+        activeClassName: styles.activeClassName,
         to: 'https://github.com/jlyons4593/CryptoTransfer',
         name: 'Github'
     },
     {
-        // className: styles.className,
-        // activeClassName: styles.activeClassName,
+        className: styles.className,
+        activeClassName: styles.activeClassName,
         to: '#',
         name: 'Contact'
     },    
 ]    
 
 
-const NaviBar = () => {
+const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     return (
       <nav className='w-full flex md:justify-center justify-between items-center'>
@@ -45,11 +49,11 @@ const NaviBar = () => {
                 <BiTransferAlt fontSize={52} className=' w-20 flex-col text-green-400 cursor-pointer'/>
             </div>
             <ul className='text-white md:flex hidden list-none flex-row justify-start items-start flex-initial'></ul>
-                {links.map(link => (
-                    <a href={link.to} className={mainStyles.className} activeClassName={mainStyles.activeClassName} >
-                        {link.name}
-                    </a> 
-                ))}
+            {links.map(link => (
+                <NavLink to={link.to} className={link.className}  key={link.name}>
+                    {link.name}
+                    </NavLink> 
+            ))}
                 <ul className='bg-blue-600 py-2 px-7 mx-4 hidden md:flex text-white rounded-full cursor-pointer hover:bg-[#2546bd]'>
                     Login
                 </ul>
@@ -66,11 +70,13 @@ const NaviBar = () => {
             <li className='text-xl w-full my-2'>
               <AiOutlineClose onClick={() => setToggleMenu(false)}/>
             </li>
-            {links.map(link => (
-                <a href={link.to} className={secondaryStyles.className} activeClassName={secondaryStyles.activeClassName} >
+           
+                {links.map(link => (
+                <NavLink to={link.to} className={link.className}  key={link.name} >
                     {link.name}
-                </a> 
+                    </NavLink> 
             ))}
+         
             <ul className=' px-7  flex md:hidden text-white rounded-full cursor-pointer hover:bg-[#2546bd]'>
                     Login
             </ul>
@@ -82,4 +88,4 @@ const NaviBar = () => {
   )
 }
 
-export default NaviBar
+export default Navbar
