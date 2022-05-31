@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header, Footer, Services, Transactions, Form } from './components'
-import { Nav } from './components/Nav'
+import { Nav, Header, Footer, Services, Transactions, Form } from './components'
+
 const App = () => {
   return (
     
