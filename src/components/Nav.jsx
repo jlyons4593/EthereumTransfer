@@ -32,7 +32,7 @@ const links = [
 ]    
 
 
-const Navbar = () => {
+const Nav = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     return (
       <nav className='w-full flex md:justify-center justify-between items-center'>
@@ -81,4 +81,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Nav
