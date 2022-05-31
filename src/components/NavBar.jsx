@@ -3,7 +3,7 @@ import {HiMenuAlt4} from 'react-icons/hi'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BiTransferAlt} from 'react-icons/bi'
 import { SiEthereum } from 'react-icons/si'
-import {  NavLink } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 
 const mainStyles = {
     className:'text-white md:flex hidden list-none flex-row justify-between items-center flex-initial px-7',
@@ -50,9 +50,9 @@ const Navbar = () => {
             </div>
             <ul className='text-white md:flex hidden list-none flex-row justify-start items-start flex-initial'></ul>
             {links.map(link => (
-                <NavLink to={link.to} className={link.className}  key={link.name}>
+                <a href={link.to} className={link.className}  key={link.name}>
                     {link.name}
-                    </NavLink> 
+                    </a> 
             ))}
                 <ul className='bg-blue-600 py-2 px-7 mx-4 hidden md:flex text-white rounded-full cursor-pointer hover:bg-[#2546bd]'>
                     Login
@@ -72,9 +72,9 @@ const Navbar = () => {
             </li>
            
                 {links.map(link => (
-                <NavLink to={link.to} className={link.className}  key={link.name} >
+                <a href={link.to} className={link.className}  key={link.name} as="a" >
                     {link.name}
-                    </NavLink> 
+                    </a> 
             ))}
          
             <ul className=' px-7  flex md:hidden text-white rounded-full cursor-pointer hover:bg-[#2546bd]'>
