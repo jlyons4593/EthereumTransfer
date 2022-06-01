@@ -14,7 +14,7 @@ const links = [
     {
         className: styles.className,
         activeClassName: styles.activeClassName,
-        to: '#',
+        to: 'https://ropsten.etherscan.io/address/0xf60F02FAD75e3bB8f33359cD5aC26C0c74324a4b',
         name: 'Blockchain'
     },
     {
@@ -22,13 +22,7 @@ const links = [
         activeClassName: styles.activeClassName,
         to: 'https://github.com/jlyons4593/CryptoTransfer',
         name: 'Github'
-    },
-    {
-        className: styles.className,
-        activeClassName: styles.activeClassName,
-        to: '#',
-        name: 'Contact'
-    },    
+    },   
 ]    
 
 
